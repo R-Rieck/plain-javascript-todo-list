@@ -3,23 +3,52 @@
     background-color: white;
     margin: 250px 800px;
     width: 300px;
-    height: 200px;
+    height: 250px;
     border-radius: 20px;
     border: 5px solid gray
 }
 
-.LeftMargin{
-    margin-left: 60px;
+.SubmitButtonStlye{
+    width: 150px;
 }
 
-.LeftMarginLess30{
+.SubmitButtonStlye:hover{
+    width: 150px;
+}
+.CreateAccountStyle{
+    color: blue;
+    font-style: italic;
+    width: 170px;
+}
+
+.CreateAccountStyle:hover{
+    border: 1px double blue;
+}
+
+.UsernameBoxStyle{
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 25px;
+    color: gray;
+}
+
+.UsernameBoxStyle:focus{
+    padding-left: 5px;
+    color: black;
+}
+
+.LeftMargin25{
     margin-left: 25px;
 }
 
-.TopMargin{
-    margin-top:20px;
+.TopMargin30{
+    margin-top:30px;
 }
 
-.TopMarginLess50{
+.TopMargin25{
+    margin-top:25px;
+}
+
+.TopMargin15{
     margin-top:15px;
 }

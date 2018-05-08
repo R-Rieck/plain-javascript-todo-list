@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Log-In</title>
     <link rel="stylesheet" type="text/css" href="/CSS/Basic.css"/>
+    <link rel="stylesheet" type="text/css" href="/CSS/Slider.css"/>
     <link rel="stylesheet" type="text/css" href="/CSS/LogInDesign.css"/>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
@@ -23,6 +24,10 @@
 <body>
     <div class="HeaderStyle">
         <p>Loggen Sie sich ein um ihre ToDo's zu verwalten</p>
+        <!-- <label class="switch">             Implement later
+                <input type="checkbox">
+                <span class="slider round"></span>
+        </label> -->
     </div>
     <div class="MainStyle">
         <div class="CenteredField ">
@@ -30,10 +35,10 @@
             <input class="alone LeftMargin25 UsernameBoxStyle" id="UsernameBox" type="text"/>
             <label class="alone LeftMargin25 TopMargin25" >Passwort:</label>
             <input class="alone LeftMargin25 UsernameBoxStyle"  id="PasswordBox" type="password"/>
-            <input class="alone LeftMargin25 TopMargin25 SubmitButtonStlye "  type="submit" onclick="LogIn()" value="Anmelden"/>
-            <p class="LeftMargin25 TopMargin15 CreateAccountStyle" onclick="alert('Funktion noch zu implementieren')"> Erstelle einen neuen Account</p>
+            <input class="alone LeftMargin25 TopMargin25 SubmitButtonStlye "  type="submit" onclick="LogIn();" value="Anmelden"/>
+            <p class="LeftMargin25 TopMargin15 CreateAccountStyle" onclick="CreateNewAccountWindow()"> Erstelle einen neuen Account</p>
         </div>
-        
+        <div class="CreateNewAccountDiv"></div>
     </div>
     <div class="FooterStyle">
 

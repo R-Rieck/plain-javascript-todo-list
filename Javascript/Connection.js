@@ -1,9 +1,24 @@
 const Firebase = firebase.database().ref();
-console.log(Firebase);
 
 
 function ValidationCheck(username, password) {
-    //implement ValidationCheck
+    let users = new Array();
+    let validUser = false;
+
+    Firebase.child('user/').on("child_added", snap => {
+        users.push({
+            name: snap.child("Username").val(),
+            pw : snap.child("Password").val()
+        });
+    })
+
+    users.forEach(el => {
+        if((el.name == username) && (el.pw == password)){
+             validUser = true;
+        }
+    });
+
+    return validUser;
 }
 
 function InsertData(username, password){
@@ -11,6 +26,4 @@ function InsertData(username, password){
         Username: username,
         Password: password
     });
-
-    alert('does it worked');
 }

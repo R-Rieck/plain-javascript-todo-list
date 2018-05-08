@@ -7,7 +7,7 @@ function LoadDefaults()
     let sel = document.getElementById('CategorySelector');
     let categories = ['Arbeit','Privat'];
 
-    task.value = 'Do Something'
+    // task.value = 'Do Something'
     task.style.color = "#999999";
 
     let today = new Date();

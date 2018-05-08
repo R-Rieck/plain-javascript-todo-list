@@ -1,13 +1,13 @@
 const UsernameBox = document.getElementById('UsernameBox');
 const PasswordBox = document.getElementById('PasswordBox');
 
-const NewUsernameBox = document.getElementById('NewUsernameBox')
-const NewPasswordBox = document.getElementById('NewPasswordBox')
+
 
 function LogIn(){
     username = UsernameBox.value;
     password = PasswordBox.value;
 
+    console.log(ValidationCheck(username, password));
     if(ValidationCheck(username, password)){
          location.href = 'http://127.0.0.1:5500/index.html';
     }
@@ -17,15 +17,23 @@ function LogIn(){
 }
 
 function CreateNewAccount (username, password){
-    // NewUsername = NewUsernameBox.value;
-    // NewPassword = NewPasswordBox.value;
+    const NewUsernameBox = document.getElementById('NewUsernameBox')
+    const NewPasswordBox = document.getElementById('NewPasswordBox')
 
-    console.log(UsernameBox.value + ", " + PasswordBox.value);
+    NewUsername = NewUsernameBox.value;
+    NewPassword = NewPasswordBox.value;
+
+    console.log(NewUsername + ', ' +NewPassword);
     
-    if((UsernameBox.value.length > 1 && UsernameBox.value.length < 25) && (PasswordBox.value.length > 1 && PasswordBox.value.length < 32)){
-        InsertData(UsernameBox.value, PasswordBox.value);
+    if((NewUsername.length > 1 && NewUsername.length < 25) && (NewPassword.length > 1 && NewPassword.length < 32)){
+        console.log('here i am')
+        InsertData(NewUsername, NewPassword);
     }
 }
+
+
+
+
 
 function CreateNewAccountWindow(){
     const box = document.querySelector('.CreateNewAccountDiv');
@@ -44,17 +52,17 @@ function CloseNewAccountWindow(){
     const box = document.querySelector('.CreateNewAccountDiv');
     console.log(box);
     
-    box.className = 'closing'
+    box.className = 'CreateNewAccountDiv closing'
     box.innerHTML = '';
 }
 
 function insertNewAccountElements(){
-    return '<label class="alone LeftMargin25 TopMargin30">Neuer Benutzername:</label>'+
-    '<input class="alone LeftMargin25 UsernameBoxStyle" id="NewUsernameBox" type="text"/>'+
+    return  '<label class="alone LeftMargin25 TopMargin30">Neuer Benutzername:</label>'+
+     '<input class="alone LeftMargin25 UsernameBoxStyle" id="NewUsernameBox" type="text"/>'+
     '<label class="alone LeftMargin25 TopMargin25" >Neues Passwort:</label>'+
     '<input class="alone LeftMargin25 UsernameBoxStyle"  id="NewPasswordBox" type="password"/>'+
     '<label class="alone LeftMargin25 TopMargin25" >Neues Passwort wiederholen:</label>'+
-    '<input class="alone LeftMargin25 UsernameBoxStyle"  id="NewPasswordBoxTwo" type="password"/>'+
+    '<input class="alone LeftMargin25 UsernameBoxStyle"  id="NewPasswordBoxTwo" type="password"/>'+ 
     '<input class="alone LeftMargin50 TopMargin25 SubmitButtonStlye "  type="submit" onclick="CreateNewAccount();" value="Registrieren"/>'+
     '<input class="alone LeftMargin50 TopMargin15 SubmitButtonStlye "  type="submit" onclick="CloseNewAccountWindow();" value="Zurück"/>'
 }

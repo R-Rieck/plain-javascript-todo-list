@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log-In</title>
+    <link rel="stylesheet" type="text/css" href="/CSS/Basic.css"/>
+    <link rel="stylesheet" type="text/css" href="/CSS/LogInDesign.css"/>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyCcBZWt3ooUbddkTsVOxFLUNU_m2aYilm4",
+              authDomain: "login-l0g1n2.firebaseapp.com",
+              databaseURL: "https://login-l0g1n2.firebaseio.com/",
+              projectId: "todoapp-login",
+              storageBucket: "",
+              messagingSenderId: "1023751433237"
+            };
+            firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="Javascript/index.js"></script>
+    </head>
+<body>
+    <div class="HeaderStyle">
+        <p>Loggen Sie sich ein um ihre ToDo's zu verwalten</p>
+    </div>
+    <div class="MainStyle">
+        <div class="CenteredField ">
+            <label class="alone LeftMargin TopMargin">Anmeldename:</label>
+            <input class="alone LeftMargin" id="UsernameBox" type="text"/>
+            <label class="alone LeftMargin TopMarginLess50" >Passwort:</label>
+            <input class="alone LeftMargin"  id="PasswordBox" type="password"/>
+            <input class="alone LeftMarginLess30 TopMarginLess50 SubmitButtonStlye "  type="submit" onclick="LogIn()" value="Anmelden"/>
+        </div>
+        <p>Erstelle einen neuen Account</p>
+    </div>
+    <div class="FooterStyle">
+
+    </div>
+    <script type="text/javascript" src="Javascript/LogInController.js"></script>
+    <script type="text/javascript" src="Javascript/Connection.js"></script>
+</body>
+</html>

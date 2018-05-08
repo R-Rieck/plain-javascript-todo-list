@@ -1,0 +1,73 @@
+.eingabeMitLable {
+    padding: 10px 0px;    
+}
+
+
+.InputSecStyle{
+    /* position: absolute; */
+    width: 100%;
+    margin-top: 50px;
+    padding-left: 100px;
+    margin-bottom: 20px;
+}
+
+.LabelDesigner{
+    font-family: Arial;
+    color: #999999;
+}    
+
+.TextboxWidth{
+    width: 50%;
+    height: 30px;
+    padding-left: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.SelectWidth{
+    width: 150px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.DateWidth{
+    border: 1px solid black;
+    height: 30px;
+    border-radius: 5px;
+}
+/*table*/
+
+.table, .th, .td{
+    border: 0px solid black;
+}
+.table {
+    border-collapse: separate;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.th, .td{
+    color: white;
+    height: 40px;
+    text-align: center
+}
+
+.td{
+    border-bottom: 2px solid black;
+    border-radius: 7.5px;
+    font-family: 'Trebuchet MS';
+    font-size: 15px;
+    font-weight: 1;
+}
+
+.th{
+    border:  1px solid black;
+    border-radius: 5px;
+    background-color: #006e6e;
+    color: rgb(0, 0, 0);
+    font-family: 'Trebuchet MS';
+    font-size: 15px;
+    font-weight: 1;
+}
+

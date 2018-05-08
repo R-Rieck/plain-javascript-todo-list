@@ -1,0 +1,25 @@
+.CenteredField{
+    position: absolute;
+    background-color: white;
+    margin: 250px 800px;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    border: 5px solid gray
+}
+
+.LeftMargin{
+    margin-left: 60px;
+}
+
+.LeftMarginLess30{
+    margin-left: 25px;
+}
+
+.TopMargin{
+    margin-top:20px;
+}
+
+.TopMarginLess50{
+    margin-top:15px;
+}

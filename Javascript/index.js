@@ -1,13 +1,11 @@
 /*Public functions */
-
-function LoadDefaults()
+async function LoadDefaults()
 {
     let task = document.getElementById('TaskField');
     let date = document.getElementById('DateField');
     let sel = document.getElementById('CategorySelector');
     let categories = ['Arbeit','Privat'];
 
-    // task.value = 'Do Something'
     task.style.color = "#999999";
 
     let today = new Date();
@@ -22,7 +20,6 @@ function LoadDefaults()
         mm='0'+mm;
     } 
     date.value = yyyy + '-' + mm +'-' + dd;
-
     
     for(var i = 0; i < categories.length; i++) 
     {
@@ -32,9 +29,18 @@ function LoadDefaults()
         sel.appendChild(opt);
     }
 
-    getLocalStorageItems().forEach(item => {
-        showInTable(item.Task, item.Date, item.Category);
-    });;
+    let test = await GetToDoObjects(task => showInTable(item.Task, item.Date, item.Category, item.Id));
+    let ar = new Array({hallo: 'dasd'},{hallo: 'dasd'} );
+
+    //console.log(ar);
+    console.log(test[0], test.length);
+    //console.log(test.length);
+    
+    //test.forEach(item => {
+    GetToDoObjects
+        console.log('test');
+        showInTable(item.Task, item.Date, item.Category, item.Id);      
+    });
 }
 
 function ClearBox()
@@ -52,8 +58,8 @@ function SubmitChanges()
     let date = new Date(document.getElementById('DateField').value);
     let category = document.getElementById('CategorySelector');
 
-    storeInLocaleStorage(task, date.toLocaleDateString('de-DE',options), category)
-    showInTable(task.value, date.toLocaleDateString('de-DE',options), category.value);
+    InsertToDoData(task.value, date.toLocaleDateString('de-DE',options), category.value)
+    // showInTable(task.value, date.toLocaleDateString('de-DE',options), category.value);
     
 }
 
@@ -65,13 +71,14 @@ function DeleteEntry(task){
 
 /*Private functions*/
 
-function showInTable(task, date, category)
+function showInTable(task, date, category,id)
 {
     let table = document.getElementById('DataTable');
     let key = task + date + category;
 
     table.innerHTML += 
     '<tr class="tr" id="' + task + '">'+
+    '<td class="td">' + id + '</td>'+
     '<td class="td">' + task + '</td>'+
     '<td class="td">' + date + '</td>'+
     '<td class="td">' + category+ '</td>'+
@@ -80,34 +87,23 @@ function showInTable(task, date, category)
     '</tr>'
 }
 
-function storeInLocaleStorage(task, date, category)
-{
-    let todoObject = {'Task': task.value, 'Date': date, 'Category': category.value};
-    let convertToJSON = JSON.stringify(todoObject);
+// function storeInLocaleStorage(task, date, category)
+// {
+//     let todoObject = {'Task': task.value, 'Date': date, 'Category': category.value};
+//     let convertToJSON = JSON.stringify(todoObject);
 
-    console.log(localStorage.setItem(task.value+date+category.value, convertToJSON));
-    console.log(convertToJSON);
-}
+//     console.log(localStorage.setItem(task.value+date+category.value, convertToJSON));
+//     console.log(convertToJSON);
+// }
 
-function getLocalStorageItems()
-{
-    let TaskObjects = [];
+// function getLocalStorageItems()
+// {
+//     let TaskObjects = [];
 
-    for( i = 0; i < localStorage.length; i++){
-        console.log(localStorage.getItem(localStorage.key(i)));
-        let taskObject = JSON.parse(localStorage.getItem(localStorage.key(i)));
-       TaskObjects.push(taskObject);
-    }
-    return TaskObjects;       
-}
-
-function timeLeftMarker(){
-
-}
-
-/*Testing*/
-
-function testing(task = 'hallo'){
-    console.log('<td class="td">' + '<img src="Ressources/delete.png" width="20" height="20" onclick="DeleteEntry('+ '"' + task + '"' + ');">')
-    
-}
+//     for( i = 0; i < localStorage.length; i++){
+//         console.log(localStorage.getItem(localStorage.key(i)));
+//         let taskObject = JSON.parse(localStorage.getItem(localStorage.key(i)));
+//        TaskObjects.push(taskObject);
+//     }
+//     return TaskObjects;       
+// }

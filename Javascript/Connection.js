@@ -27,3 +27,4 @@ function InsertData(username, password){
         Password: password
     });
 }
+

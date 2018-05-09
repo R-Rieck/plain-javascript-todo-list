@@ -9,7 +9,7 @@ function LogIn(){
 
     console.log(ValidationCheck(username, password));
     if(ValidationCheck(username, password)){
-         location.href = 'http://127.0.0.1:5500/index.html';
+         location.href = 'http://127.0.0.1:5500/ToDoPage.html';
     }
     else{
          alert("\n\nDa ist wohl etwas schiefgelaufen. \nBitte versuche es erneut.")

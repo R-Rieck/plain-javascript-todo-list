@@ -1,68 +1,43 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="/CSS/style.css"/>
+    <meta charset="UTF-8">
+    <title>Log-In</title>
     <link rel="stylesheet" type="text/css" href="/CSS/Basic.css"/>
-    <script type="text/javascript" src="Javascript/index.js"></script>
-    <script lang="javascript" type="text/javascript" src="Connection.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/CSS/Slider.css"/>
+    <link rel="stylesheet" type="text/css" href="/CSS/LogInDesign.css"/>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-    
     <script>
-    var config = {
-        apiKey: "AIzaSyDoXo0MOBiNgJHQ2CJgossHB-HWvDhCpsY",
-        authDomain: "login-l0g1n2.firebaseapp.com",
-        databaseURL: "https://login-l0g1n2.firebaseio.com",
-        projectId: "login-l0g1n2",
-        storageBucket: "",
-        messagingSenderId: "317019018806"
-      };
-    firebase.initializeApp(config);
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyCcBZWt3ooUbddkTsVOxFLUNU_m2aYilm4",
+              authDomain: "login-l0g1n2.firebaseapp.com",
+              databaseURL: "https://login-l0g1n2.firebaseio.com/",
+              projectId: "todoapp-login",
+              storageBucket: "",
+              messagingSenderId: "1023751433237"
+            };
+            firebase.initializeApp(config);
     </script>
-</head>
-<body class="BodyStyle" onload="LoadDefaults()">
-<div>
-    <header class="HeaderStyle">
-        <h1>To-Do App</h1>
-    </header>
-    <main class="MainStyle">
-        <section class="InputSecStyle">
-            <div class="eingabeMitLable">
-                <label class="LabelDesigner alone">Aufgabe</label>
-                <input class="TextboxWidth" id="TaskField" placeholder="Do something" onclick="ClearBox()" type="text"/>
-            </div>
-
-            <div class="eingabeMitLable">
-                <label class="LabelDesigner alone" >Erledigt&nbspbis</label>
-                <input class="DateWidth" id="DateField" type="date"/>
-            </div>
-            <div class="eingabeMitLable">
-                <label class="LabelDesigner alone">Kategorie</label>
-                <select class="SelectWidth" id="CategorySelector"/>
-                <input class="SubmitButtonStlye alone" type="Button" onclick="SubmitChanges()" value="Aufgabe Speichern"/>
-                
-            </div>
-
-
-        </section>
-        <section class="OutputSecStyle">
-            <table class="table" id="DataTable">
-                <tr class="tr">
-                    <th width="85%" class="th">Aufgabe</th>
-                    <th width="10%" class="th">bis</th>
-                    <th width="2.5%" class="th">&nbspKategorie&nbsp</th>
-                    <th width="2.5%" class="th">&nbspLöschen&nbsp</th>
-                    
-                </tr>
-            </table>
-        </section>
-    </main>
-    <footer class="FooterStyle">
-        <a href="http://oszimt.de">
-        </a>
-    </footer>
-
-</div>
-
+    <script type="text/javascript" src="Javascript/index.js"></script>
+    </head>
+<body>
+    <div class="HeaderStyle">
+        <p class="Headline">Loggen Sie sich ein um ihre ToDo's zu verwalten</p>
+    </div>
+    <div class="MainStyle">
+        <div class="CenteredField ">
+            <label class="alone LeftMargin25 TopMargin30">Anmeldename:</label>
+            <input class="alone LeftMargin25 UsernameBoxStyle" id="UsernameBox" type="text"/>
+            <label class="alone LeftMargin25 TopMargin25" >Passwort:</label>
+            <input class="alone LeftMargin25 UsernameBoxStyle"  id="PasswordBox" type="password"/>
+            <input class="alone LeftMargin25 TopMargin25 SubmitButtonStlye "  type="submit" onclick="LogIn();" value="Anmelden"/>
+            <p class="LeftMargin25 TopMargin15 CreateAccountStyle" onclick="CreateNewAccountWindow()"> Neuen Benutzer anlegen</p>
+        </div>
+        <div class="CreateNewAccountDiv"></div>
+    </div>
+    <div class="FooterStyle"></div>
+    <script type="text/javascript" src="Javascript/LogInController.js"></script>
+    <script type="text/javascript" src="Javascript/Connection.js"></script>
 </body>
 </html>
